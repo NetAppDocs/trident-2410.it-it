@@ -1,0 +1,211 @@
+---
+sidebar: sidebar 
+permalink: trident-get-started/requirements.html 
+keywords: trident requirements, supported front ends, supported backends, kubernetes cluster, cluster requirements, version requirements, supported versions, host configuration, host os, system configuration, host operating system, fsx, ports, csi, images, orchestrators, storage systems, feature, kubernetes 
+summary: Prima di installare Trident, è necessario esaminare questi requisiti generali di sistema. I backend specifici potrebbero avere requisiti aggiuntivi. 
+---
+= Requisiti
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Prima di installare Trident, è necessario esaminare questi requisiti generali di sistema. I backend specifici potrebbero avere requisiti aggiuntivi.
+
+
+
+== Informazioni critiche su Trident
+
+*È necessario leggere le seguenti informazioni critiche su Trident.*
+
+.<strong> informazioni aggiornate su Trident </strong>
+[%collapsible%open]
+====
+[]
+=====
+* Kubernetes 1,32 è ora supportato in Trident. Aggiornare Trident prima di aggiornare Kubernetes.
+* Trident impone rigorosamente l'uso della configurazione multipath negli ambienti SAN, con un valore consigliato di `find_multipaths: no` nel file multipath.conf.
++
+L'utilizzo di una configurazione non multipathing o di `find_multipaths: yes` un valore OR `find_multipaths: smart` nel file multipath.conf determinerà errori di montaggio. Trident ha consigliato l'uso di `find_multipaths: no` fin dalla versione 21,07.
+
+
+
+=====
+====
+
+
+== Frontend supportati (orchestratori)
+
+Trident supporta molteplici motori e Orchestrator per container, tra cui:
+
+* Anthos on-premise (VMware) e anthos su Bare Metal 1,16
+* Kubernetes 1,25 - 1,32
+* OpenShift 4,10 - 4,17
+* Rancher Kubernetes Engine 2 (RKE2) v1.28,5+rke2r1
+
+
+L'operatore Trident è supportato con le seguenti versioni:
+
+* Anthos on-premise (VMware) e anthos su Bare Metal 1,16
+* Kubernetes 1,25 - 1,32
+* OpenShift 4,10 - 4,17
+* Rancher Kubernetes Engine 2 (RKE2) v1.28,5+rke2r1
+
+
+Trident funziona anche con un host delle altre offerte Kubernetes completamente gestite e gestite in autonomia, tra cui Google Kubernetes Engine (GKE), Amazon Elastic Kubernetes Services (EKS), Azure Kubernetes Service (AKS), Mirantis Kubernetes Engine (MKE) e il portfolio VMware Tanzu.
+
+Trident e ONTAP possono essere utilizzati come provider di archiviazione per link:https://kubevirt.io/["KubeVirt"].
+
+
+WARNING: Prima di aggiornare un cluster Kubernetes dalla versione 1,24 alla 1,25 o successiva in cui è installato Trident, fare riferimento alla link:../trident-managing-k8s/upgrade-operator.html#upgrade-a-helm-installation["Aggiornare un'installazione Helm"].
+
+
+
+== Back-end supportati (storage)
+
+Per utilizzare Trident, è necessario uno o più dei seguenti backend supportati:
+
+* Amazon FSX per NetApp ONTAP
+* Azure NetApp Files
+* Cloud Volumes ONTAP
+* Google Cloud NetApp Volumes
+* FAS/AFF/Select 9.5 o versione successiva
+* Array All SAN (ASA) NetApp
+* Software NetApp HCI/Element 11 o superiore
+
+
+
+
+== Requisiti delle funzionalità
+
+La tabella seguente riassume le funzionalità disponibili con questa release di Trident e le versioni di Kubernetes che supporta.
+
+[cols="3"]
+|===
+| Funzione | Versione di Kubernetes | Sono richiesti i gate delle funzionalità? 
+
+
+| Trident  a| 
+1,25 - 1,32
+ a| 
+No
+
+
+
+| Snapshot dei volumi  a| 
+1,25 - 1,32
+ a| 
+No
+
+
+
+| PVC dalle istantanee dei volumi  a| 
+1,25 - 1,32
+ a| 
+No
+
+
+
+| Ridimensionamento di iSCSI PV  a| 
+1,25 - 1,32
+ a| 
+No
+
+
+
+| CHAP bidirezionale ONTAP  a| 
+1,25 - 1,32
+ a| 
+No
+
+
+
+| Policy di esportazione dinamiche  a| 
+1,25 - 1,32
+ a| 
+No
+
+
+
+| Operatore Trident  a| 
+1,25 - 1,32
+ a| 
+No
+
+
+
+| Topologia CSI  a| 
+1,25 - 1,32
+ a| 
+No
+
+|===
+
+
+== Sistemi operativi host testati
+
+Sebbene Trident non supporti ufficialmente sistemi operativi specifici, è noto che i seguenti sistemi funzionano:
+
+* Versioni di RedHat CoreOS (RHCOS) supportate da OpenShift Container Platform (AMD64 e ARM64)
+* RHEL 8+ (AMD64 E ARM64)
++
+
+NOTE: NVMe/TCP richiede RHEL 9 o versione successiva.
+
+* Ubuntu 22.04 o versione successiva (AMD64 e ARM64)
+* Windows Server 2022
+
+
+Per impostazione predefinita, Trident viene eseguito in un container e quindi viene eseguito su qualsiasi lavoratore Linux. Tuttavia, tali dipendenti devono essere in grado di montare i volumi forniti da Trident utilizzando il client NFS standard o l'iniziatore iSCSI, a seconda dei backend in uso.
+
+L' `tridentctl`utility funziona anche su una qualsiasi di queste distribuzioni di Linux.
+
+
+
+== Configurazione dell'host
+
+Tutti i nodi di lavoro nel cluster Kubernetes devono essere in grado di montare i volumi forniti per i pod. Per preparare i nodi di lavoro, devi installare i tool NFS, iSCSI o NVMe in base alla tua selezione di driver.
+
+link:../trident-use/worker-node-prep.html["Preparare il nodo di lavoro"]
+
+
+
+== Configurazione del sistema storage
+
+Trident potrebbe richiedere modifiche a un sistema di storage prima che possa essere utilizzato da una configurazione backend.
+
+link:../trident-use/backends.html["Configurare i backend"]
+
+
+
+== Porte Trident
+
+Trident richiede l'accesso a porte specifiche per la comunicazione.
+
+link:../trident-reference/ports.html["Porte Trident"]
+
+
+
+== Immagini container e corrispondenti versioni di Kubernetes
+
+Per le installazioni con montaggio ad aria, l'elenco seguente è un riferimento alle immagini contenitore necessarie per installare Trident. Utilizzare il `tridentctl images` comando per verificare l'elenco delle immagini contenitore necessarie.
+
+[cols="2"]
+|===
+| Versioni di Kubernetes | Immagine container 
+
+
+| v1.25.0, v1.26.0, v1.27.0, v1.28.0, v1.29.0, v1.30.0, v1.31.0, v1.32.0  a| 
+* docker.io/netapp/tridente:24.10.0
+* docker.io/netapp/trident-autosupport:24,10
+* registry.k8s.io/sig-storage/csi-provisioner:v5,1.0
+* registry.k8s.io/sig-storage/csi-attacher:v4,7.0
+* registry.k8s.io/sig-storage/csi-resizer:v1.12.0
+* registry.k8s.io/sig-storage/csi-snapshotter:v8,1.0
+* registry.k8s.io/sig-storage/csi-node-driver-registrar:v2.12.0
+* docker.io/netapp/trident-operator:24.10.0 (opzionale)
+
+
+|===
