@@ -26,7 +26,7 @@ Questo esempio crea un segreto per il manager segreto AWS per memorizzare le cre
 [listing]
 ----
 aws secretsmanager create-secret --name trident-secret --description "Trident CSI credentials"\
-  --secret-string "{\"username\":\"vsadmin\",\"password\":\"<svmpassword>\"}""
+  --secret-string "{\"username\":\"vsadmin\",\"password\":\"<svmpassword>\"}"
 ----
 
 
@@ -132,7 +132,7 @@ Verifica che il tuo provider OIDC sia associato al cluster. È possibile verific
 ----
 aws iam list-open-id-connect-providers | grep $oidc_id | cut -d "/" -f4
 ----
-In assenza di output, è possibile utilizzare il seguente comando per associare IAM OIDC al cluster:
+Utilizzare il seguente comando per associare IAM OIDC al cluster:
 
 [listing]
 ----
