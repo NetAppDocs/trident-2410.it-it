@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: trident-protect/trident-protect-appvault-custom-resources.html 
 keywords: trident. appvault, custom, protect, kubernetes 
-summary: 'La risorsa personalizzata bucket (CR) per Trident Protect è nota come AppVault. AppVaults sono la rappresentazione dichiarativa del flusso di lavoro di Kubernetes di un bucket di storage.' 
+summary: 'La risorsa personalizzata del bucket (CR) per Trident Protect è nota come AppVault. Gli AppVault sono la rappresentazione dichiarativa del flusso di lavoro Kubernetes di un bucket di archiviazione.' 
 ---
 = Utilizzare gli oggetti Trident Protect AppVault per gestire i bucket
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: 'La risorsa personalizzata bucket (CR) per Trident Protect è nota come
 
 
 [role="lead"]
-La risorsa personalizzata bucket (CR) per Trident Protect è nota come AppVault. Gli oggetti AppVault sono la rappresentazione dichiarativa del flusso di lavoro di Kubernetes di un bucket di storage. AppVault CR contiene le configurazioni necessarie per l'utilizzo di un bucket nelle operazioni di protezione, come backup, snapshot, operazioni di ripristino e replica SnapMirror. Solo gli amministratori possono creare AppVaults.
+La risorsa personalizzata del bucket (CR) per Trident Protect è nota come AppVault. Gli oggetti AppVault sono la rappresentazione dichiarativa del flusso di lavoro Kubernetes di un bucket di archiviazione. Un CR di AppVault contiene le configurazioni necessarie affinché un bucket venga utilizzato nelle operazioni di protezione, come backup, snapshot, operazioni di ripristino e replica SnapMirror . Solo gli amministratori possono creare AppVault.
 
 
 
@@ -316,7 +316,7 @@ tridentctl-protect get appvaultcontent gcp-vault --show-resources all
 ----
 . Facoltativamente, per visualizzare AppVaultPath per ogni risorsa, utilizzare il flag `--show-paths`.
 +
-Il nome del cluster nella prima colonna della tabella è disponibile solo se è stato specificato un nome cluster nell'installazione di Trident Protect helm. Ad esempio: `--set clusterName=production1`.
+Il nome del cluster nella prima colonna della tabella è disponibile solo se è stato specificato un nome del cluster nell'installazione di Trident Protect Helm. Per esempio: `--set clusterName=production1` .
 
 
 
