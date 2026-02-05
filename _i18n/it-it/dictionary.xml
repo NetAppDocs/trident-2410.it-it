@@ -1644,7 +1644,6 @@
   <block id="2294988013d14e5c254422b8164d83ad" category="list-text">Creare il pacchetto di supporto, sostituendo i valori tra parentesi con le informazioni dell'ambiente. <block ref="769627afa23a2b90f925b1091e474dc5" prefix=" " category="inline-code"></block>Determina se il bundle viene creato immediatamente o se l'ora di creazione è dettata dalla pianificazione e può essere<block ref="e1ba155a9f2e8c3be94020eef32a0301" prefix=" " category="inline-code"></block> o<block ref="2b7dabba0077abe3732e0418b048a56b" prefix=" " category="inline-code"></block>. L'impostazione predefinita è<block ref="e1ba155a9f2e8c3be94020eef32a0301" prefix=" " category="inline-code"></block>.</block>
   <block id="506c2c0c7f5b70af3df68c45c46f45a7" category="paragraph">Ad esempio:</block>
   <block id="a268a576db3133de464aad1cd81ab3e1" category="inline-link-macro">generare un bundle di supporto</block>
-  <block id="76d9687f27080e6c2da9c8a0d64fbd42" category="list-text">Installare i CRD Trident Protect:</block>
   <block id="dfb8cfd789dde682f000a96e0aabb1f1" category="list-text">Estrarre le seguenti immagini sul computer locale, aggiornare i tag e quindi inviarle al registro privato:</block>
   <block id="e0f6b701766eb28d805d7ba1e820f582" category="list-text">Accedere al Registro di sistema:</block>
   <block id="814565bb5d7e7359fff967986fd4195a" category="list-text">Creare un segreto pull da utilizzare per l'autenticazione privata del Registro di sistema:</block>
@@ -3007,8 +3006,6 @@
   <block id="5866b98c049a53ea6dc7f50f9349f434" category="list-text">Migrazione dei dati</block>
   <block id="645a84975202e30700b572b49a5ee29d" category="list-text">Disaster recovery</block>
   <block id="11d5920d0c0b3a97e764f84dc92ef110" category="list-text">Mobilità delle applicazioni</block>
-  <block id="f593e32b2a3ead4ac029c13126d3531d" category="inline-link-macro">Ulteriori informazioni su Trident Protect</block>
-  <block id="a4ac350fb585f51020f747525f3175d8" category="paragraph"><block ref="2c7a14b5507108d57a83e6eb9858f03a" category="inline-link-macro-rx"></block>.</block>
   <block id="d28325b08a2b4a8f4af42dc025afe338" category="list-text">È stato aggiunto un nuovo flag<block ref="060e82a16c6de7d9a8541fb1da32de80" prefix=" " category="inline-code"></block> ai programmi di installazione per impostare il valore QPS utilizzato da Trident per comunicare con il server API Kubernetes.</block>
   <block id="46b4e7bf1e76e8eeb88747ded42b6d4f" category="list-text">Aggiunto<block ref="1606f6268af560ddbfffdd3790afb4d2" prefix=" " category="inline-code"></block> flag agli installatori per la gestione automatica delle dipendenze del protocollo storage per i nodi del cluster Kubernetes. Compatibilità testata e verificata con il protocollo storage iSCSI Amazon Linux 2023</block>
   <block id="ee2cc86dbfffd3b53ed4701a6b458dfb" category="list-text">Aggiunto supporto per il distacco forzato per volumi ONTAP-NAS-Economy durante scenari di spegnimento nodi non-Graceful.</block>
@@ -5088,7 +5085,6 @@
   <block id="98d3ce5c789124fc9207b48d4d1e8fc7" category="paragraph">Trident Protect 24.10 non garantisce automaticamente uno stato coerente per i file system delle VM KubeVirt durante le operazioni di protezione dei dati. Se si desidera proteggere i dati della VM KubeVirt utilizzando Trident Protect 24.10, è necessario abilitare manualmente la funzionalità di congelamento/scongelamento per i file system prima dell'operazione di protezione dei dati. Ciò garantisce che i file system siano in uno stato coerente.</block>
   <block id="5ea5c247812e1dca5ff02ca853f05032" category="paragraph">È possibile configurare Trident Protect 24.10 per gestire il blocco e lo sblocco del file system della VM durante le operazioni di protezione dei dati tramite<block ref="e0dd4c4b8aa16596df6c3f5cb36d3cdc" category="inline-link-macro-rx"></block> e quindi utilizzando il seguente comando:</block>
   <block id="d9add54d9d6181f1b39ad4d1bc6451d0" category="paragraph-title">Trident Protect 24.10.1 e versioni successive</block>
-  <block id="fc0a8846b51e68aef267b5f9ab2a081d" category="paragraph">A partire da Trident Protect 24.10.1, Trident Protect blocca e sblocca automaticamente i file system KubeVirt durante le operazioni di protezione dei dati. Facoltativamente, è possibile disattivare questo comportamento automatico utilizzando il seguente comando:</block>
   <block id="d65eac563b898cb7e41b8853a4fe1a3c" category="paragraph">Se hai installato l'applicazione sorgente utilizzando Helm con<block ref="cc1f5c1d16e33b8463c9ee27295cd5df" prefix=" " category="inline-code"></block> bandiera, un trattamento speciale è riservato al<block ref="b068931cc450442b63f5b3d276ea4297" prefix=" " category="inline-code"></block> etichetta chiave. Durante il processo di ripristino o failover, Trident Protect copia questa etichetta nello spazio dei nomi di destinazione, ma aggiorna il valore al valore dello spazio dei nomi di destinazione se il valore dell'origine corrisponde allo spazio dei nomi di origine. Se questo valore non corrisponde allo spazio dei nomi di origine, viene copiato nello spazio dei nomi di destinazione senza modifiche.</block>
   <block id="186ed0696d9f28961b696fce39a1ab04" category="summary">Trident Protect ti consente di proteggere le tue applicazioni e i dati delle applicazioni tramite Trident.</block>
   <block id="a1fc1c89153021eb03a34941e90a9ac8" category="doc">Scopri di più su Trident Protect</block>
@@ -5125,7 +5121,6 @@
   <block id="e0efc186d85cb700edf5d19dd5bc9496" category="open-title">Installa Trident Protect da NetApp</block>
   <block id="93459820f19a8251d29e060f09ece7bf" category="list-text">Utilizzare Helm per installare Trident Protect utilizzando uno dei seguenti comandi. Sostituire<block ref="b90b2ffedb63ca3bd8795caf4397715e" prefix=" " category="inline-code"></block> con un nome cluster, che verrà assegnato al cluster e utilizzato per identificare i backup e gli snapshot del cluster:</block>
   <block id="eb462dda0e96614f18b56ebeffd4f4c3" category="list-text">Installare Trident Protect normalmente:</block>
-  <block id="62d9a4720463384e2dba920f37795e8b" category="list-text">Installa Trident Protect e disattiva i caricamenti giornalieri programmati del pacchetto di supporto Trident Protect AutoSupport :</block>
   <block id="272a3e0fc5f097dfcb8f549a6577a5f6" category="open-title">Installa Trident Protect da un registro privato</block>
   <block id="357de3657314f9b2b3abd151f9d483ee" category="paragraph">È possibile installare Trident Protect da un registro di immagini privato se il cluster Kubernetes non è in grado di accedere a Internet. In questi esempi, sostituisci i valori tra parentesi con le informazioni provenienti dal tuo ambiente:</block>
   <block id="8bb72cea6536be6ef0764dfc1d24b096" category="list-text">Creare lo spazio dei nomi del sistema Trident Protect:</block>
@@ -5200,4 +5195,7 @@
   <block id="70568f333da28442c152ac2e1f71e1a0" category="sidebar">Proteggi le applicazioni con Trident Protect</block>
   <block id="8545a0d7cdafff8da2dece1a851630dc" category="sidebar">Gestisci Trident Protect</block>
   <block id="83ff2dd2ff6a9ee85daa1b0fefef4019" category="sidebar">Gestisci gli hook di esecuzione con Trident Protect</block>
+  <block id="a099f4b5b32bb2a3c98bf39fd2eada0d" category="paragraph">A partire da Trident Protect 24.10.1, Trident Protect blocca e sblocca automaticamente i file system KubeVirt durante le operazioni di protezione dei dati. Facoltativamente, puoi disabilitare questo comportamento automatico utilizzando il seguente comando:</block>
+  <block id="f2492ecd5d283ce85dae0f4a9ee08a0a" category="inline-link-macro">Scopri di più su Trident Protect</block>
+  <block id="fcea491f131646a6f887b5a13212cd84" category="paragraph"><block ref="30e9c40051e05c72dc744ea1f1015e1f" category="inline-link-macro-rx"></block>.</block>
 </blocks>
