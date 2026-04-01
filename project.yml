@@ -40,8 +40,6 @@ sidebar:
     entries:
     - title: Novità
       url: "/trident-rn.html"
-    - title: Versioni precedenti
-      url: "/earlier-versions.html"
   - section: trident-get-started
   - section: trident-install
   - section: trident-use
