@@ -12,7 +12,7 @@ summary: 'È possibile utilizzare direttamente l"endpoint REST se si preferisce 
 
 
 [role="lead"]
-Anche se link:tridentctl.html["comandi e opzioni tridentctl"] rappresentano il modo più semplice per interagire con l'API REST di Trident, se preferisci puoi utilizzare direttamente l'endpoint REST.
+Anche se link:../trident-managing-k8s/tridentctl.html["comandi e opzioni tridentctl"] sono il modo più semplice per interagire con l'Astra Trident REST API, puoi usare direttamente l'endpoint REST se preferisci.
 
 
 
