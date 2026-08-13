@@ -16,6 +16,7 @@ Scopri le opzioni di configurazione di back-end NFS per Google Cloud NetApp Volu
 
 
 
+[[backend-configuration-options]]
 == Opzioni di configurazione back-end
 
 Ogni back-end esegue il provisioning dei volumi in una singola area di Google Cloud. Per creare volumi in altre regioni, è possibile definire backend aggiuntivi.
@@ -68,6 +69,7 @@ Ogni back-end esegue il provisioning dei volumi in una singola area di Google Cl
 |===
 
 
+[[volume-provisioning-options]]
 == Opzioni di provisioning dei volumi
 
 È possibile controllare il provisioning del volume predefinito nella `defaults` sezione del file di configurazione.
@@ -90,6 +92,7 @@ Ogni back-end esegue il provisioning dei volumi in una singola area di Google Cl
 |===
 
 
+[[example-configurations]]
 == Configurazioni di esempio
 
 Gli esempi seguenti mostrano le configurazioni di base che lasciano la maggior parte dei parametri predefiniti. Questo è il modo più semplice per definire un backend.
@@ -373,6 +376,7 @@ supportedTopologies:
 ====
 
 
+[[whats-next]]
 == Quali sono le prossime novità?
 
 Dopo aver creato il file di configurazione back-end, eseguire il seguente comando:
@@ -400,10 +404,12 @@ Dopo aver identificato e corretto il problema con il file di configurazione, è 
 
 
 
+[[more-examples]]
 == Altri esempi
 
 
 
+[[storage-class-definition-examples]]
 === Esempi di definizione della classe di archiviazione
 
 Di seguito è riportata una definizione di base `StorageClass` che fa riferimento al backend riportato sopra.
@@ -457,6 +463,7 @@ Per ulteriori informazioni sulle classi di archiviazione, fare riferimento a lin
 
 
 
+[[pvc-definition-example]]
 === Esempio di definizione PVC
 
 [listing]

@@ -16,6 +16,7 @@ Creare un PersistentVolume (PV) e un PersistentVolumeClaim (PVC) che utilizza Ku
 
 
 
+[[overview]]
 == Panoramica
 
 Un link:https://kubernetes.io/docs/concepts/storage/persistent-volumes/["_PersistentVolume_"^] (PV) è una risorsa di storage fisico fornita dall'amministratore del cluster in un cluster Kubernetes. Il https://kubernetes.io/docs/concepts/storage/persistent-volumes["_PersistentVolumeClaim_"^] (PVC) è una richiesta di accesso al PersistentVolume sul cluster.
@@ -26,6 +27,7 @@ Dopo aver creato PV e PVC, è possibile montare il volume in un pod.
 
 
 
+[[sample-manifests]]
 === Manifesti campione
 
 .Manifesto di esempio di PersistentVolume
@@ -148,6 +150,7 @@ spec:
 ====
 
 
+[[create-the-pv-and-pvc]]
 == Creare PV e PVC
 
 .Fasi

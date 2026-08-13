@@ -21,6 +21,7 @@ NOTE: Per impostazione predefinita, Trident Protect raccoglie informazioni di su
 
 
 
+[[install-trident-protect]]
 == Installa Trident Protect
 
 [role="tabbed-block"]
@@ -171,6 +172,7 @@ helm install trident-protect netapp-trident-protect/trident-protect --set autoSu
 ====
 
 
+[[specify-trident-protect-container-resource-limits]]
 == Specificare i limiti delle risorse del contenitore Trident Protect
 
 Dopo aver installato Trident Protect, è possibile utilizzare un file di configurazione per specificare i limiti delle risorse per i contenitori Trident Protect. Impostando i limiti delle risorse è possibile controllare la quantità di risorse del cluster consumata dalle operazioni Trident Protect.
